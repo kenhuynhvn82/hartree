@@ -70,7 +70,7 @@ def merge_two_datasets_by_beam(input_file1: str, input_file2: str, output_file: 
     
         dataset1 = (
             p 
-            #| 'Read dataset1 file (if the new line is either \n or \r\n)' >> beam.io.ReadFromText(input_file1, skip_header_lines=1) 
+            #| 'Read dataset1 file (if newline delimiters are 'n' and 'rn')' >> beam.io.ReadFromText(input_file1, skip_header_lines=1) 
             | 'Read dataset1 file' >> beam.io.ReadFromText(input_file1) 
             | 'Parse dataset1' >> beam.ParDo(Dataset1())
             | 'Group dataset1 by counter_party' >> beam.Map(lambda row: (row['counter_party'], row))
@@ -78,7 +78,7 @@ def merge_two_datasets_by_beam(input_file1: str, input_file2: str, output_file: 
         
         dataset2 = (
             p 
-            #| 'Read dataset2 file (if the new line is either \n or \r\n)' >> beam.io.ReadFromText(input_file2, skip_header_lines=1) 
+            #| 'Read dataset2 file (if newline delimiters are 'n' and 'rn')' >> beam.io.ReadFromText(input_file2, skip_header_lines=1) 
             | 'Read dataset2 file' >> beam.io.ReadFromText(input_file2) 
             | 'Parse dataset2' >> beam.ParDo(Dataset2())
             | 'Group dataset2 by counter_party' >> beam.Map(lambda row: (row['counter_party'], row))
