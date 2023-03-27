@@ -1,0 +1,43 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Main-Pandas",
+            "type": "python",
+            "request": "launch",
+            "program": "src/exercise/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceRoot}/src"    
+            },
+            "args": ["-if1", "src/testdata/dataset1.csv", "-if2", "src/testdata/dataset2.csv", "-of", "src/testdata/output_pandas.csv", "-f", "pandas"]
+        },
+        {
+            "name": "Main-Beam",
+            "type": "python",
+            "request": "launch",
+            "program": "src/exercise/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceRoot}/src"    
+            },
+            "args": ["-if1", "src/testdata/dataset1.csv", "-if2", "src/testdata/dataset2.csv", "-of", "src/testdata/output_beam", "-f", "beam"]
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceRoot}"    
+            }
+        }
+    ]
+}
