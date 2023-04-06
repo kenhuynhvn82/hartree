@@ -13,8 +13,10 @@ def sort(nums):
     return nums
 
 def swap(nums, i, j):
-    tmp = nums[i]
-    nums[i] = nums[j]
-    nums[j] = tmp
+    # tmp = nums[i]
+    # nums[i] = nums[j]
+    # nums[j] = tmp
+    
+    nums[i], nums[j] = nums[j], nums[i]
     
     
